@@ -5,8 +5,10 @@ function EntriesPage() {
 
     return (
         <>
-            <Link to="/"><Button>Home</Button></Link>
-            <h1>Entries</h1>
+            <div className={"bg-red-500"}>
+                <Link to="/"><Button>Home</Button></Link>
+                <h1>Entries</h1>
+            </div>
         </>
     )
 }
