@@ -5,9 +5,13 @@ function LandingPage() {
 
     return (
         <>
-            <h1>Welcome! Let's track your mood!</h1>
-            <Link to="/entries"><Button>Entries</Button></Link>
-            <Link to="/stats"><Button>Stats</Button></Link>
+            <div className={"flex flex-col justify-center gap-4"}>
+                <h1>Welcome! Let's track your mood!</h1>
+                <div className={"flex flex-row justify-center gap-4"}>
+                    <Link to="/entries"><Button>Entries</Button></Link>
+                    <Link to="/stats"><Button>Stats</Button></Link>
+                </div>
+            </div>
         </>
     )
 }

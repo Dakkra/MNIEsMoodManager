@@ -5,8 +5,10 @@ function StatsPage() {
 
     return (
         <>
-            <Link to="/"><Button>Home</Button></Link>
-            <h1>Statistics</h1>
+            <div className={"flex relative justify-center items-center"}>
+                <Link className={"absolute left-[-6rem]"} to="/"><Button>Home</Button></Link>
+                <h1 className={"inline"}>Statistics</h1>
+            </div>
         </>
     )
 }
