@@ -1,17 +1,24 @@
 import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
+import './App.css'
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import App from "./App.tsx";
+import LandingPage from "./LandingPage.tsx";
+import EntriesPage from "./EntriesPage.tsx";
+import StatsPage from "./StatsPage.tsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App></App>,
+        element: <LandingPage></LandingPage>,
     },
     {
-        path: "/demo",
-        element: <>{"Demo!"}</>
+        path: "/entries",
+        element: <EntriesPage></EntriesPage>
+    },
+    {
+        path: "/stats",
+        element: <StatsPage></StatsPage>
     }
 ]);
 
