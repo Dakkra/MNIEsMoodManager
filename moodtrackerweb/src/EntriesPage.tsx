@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import Button from "./Button.tsx";
 import {useState} from "react";
+import EntryRow from "./EntryRow.tsx";
 
 interface Entry {
     id: string;
@@ -11,6 +12,7 @@ interface Entry {
     happiness?: number;
     mania?: number;
     overall?: number;
+    notes?: string;
 }
 
 function EntriesPage() {
@@ -33,7 +35,7 @@ function EntriesPage() {
                 >Add Item</Button>
                 Items({items.length})
                 {items.map((item) => {
-                    return <div key={item.id}>{item.id}</div>
+                    return <EntryRow id={item.id}></EntryRow>
                 })}
             </div>
         </>
