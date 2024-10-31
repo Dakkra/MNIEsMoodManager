@@ -12,7 +12,9 @@ export const saveEntity = (entity: Entity) => {
 }
 
 export const getEntity = <T extends Entity>(id: string) => {
-    return JSON.parse(window.localStorage.getItem(id) ?? "") as T;
+    const entity = window.localStorage.getItem(id);
+    if (entity) return JSON.parse(entity) as T;
+    return undefined;
 }
 
 export const deleteEntity = (id: string) => {
