@@ -38,5 +38,8 @@ export const getEntriesModel = () => {
 
 export const deleteAllEntries = () => {
     const model = getEntriesModel();
-    if (model) model.entriesList.forEach(id => deleteEntity(id));
+    if (model) {
+        model.entriesList.forEach(id => deleteEntity(id));
+        saveEntriesModel({...model, entriesList: []});
+    }
 }
