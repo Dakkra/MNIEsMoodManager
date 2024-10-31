@@ -18,7 +18,7 @@ const EntryRow = (props: EntryProps) => {
     return (
         <div>
             <div className="flex flex-row gap-2 bg-gray-700 rounded-lg p-2">
-                <div>Date-Time: {new Date(entry.date).toString()}</div> // TODO need date formatting
+                <div>Date-Time: {new Date(entry.date).toString()}</div>
                 <div>Overall: 7</div>
                 <div>Happiness: 7</div>
                 <div>Depression: 7</div>
