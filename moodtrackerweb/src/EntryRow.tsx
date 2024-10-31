@@ -8,6 +8,15 @@ interface EntryProps {
     onDelete: () => void;
 }
 
+const LabelledEntry = (props: { label: string, setValue: (value: string) => void }) => {
+    return <div className={"flex flex-row gap-2"}>
+        <div className={"text-lg"}>{props.label}:</div>
+        <input className={"h-10 w-10 rounded-lg"} type={"text"} onChange={(event) => {
+            props.setValue(event.target.value);
+        }}></input>
+    </div>
+}
+
 const EntryRow = (props: EntryProps) => {
     const id = props.id;
     const entry = getEntity<Entry>(id);
@@ -17,15 +26,28 @@ const EntryRow = (props: EntryProps) => {
 
     return (
         <div>
-            <div className="flex flex-row gap-2 bg-gray-700 rounded-lg p-2">
-                <div>Date-Time: {new Date(entry.date).toString()}</div>
-                <div>Overall: 7</div>
-                <div>Happiness: 7</div>
-                <div>Depression: 7</div>
-                <div>Anxiety: 7</div>
-                <div>Stress: 7</div>
-                <div>Mania: 7</div>
-                <Button onClick={() => setIsExpanded(!isExpanded)}>...</Button>
+            <div className="flex flex-col gap-2 bg-gray-700 rounded-lg p-2">
+                <div className={"text-lg bg-gray-800 p-2 rounded-lg"}>Date-Time: {new Date(entry.date).toString()}</div>
+                <div className={"flex flex-row gap-2 "}>
+                    <LabelledEntry label={"Overall"} setValue={() => {
+                    }}/>
+                    <LabelledEntry label={"Happiness"} setValue={() => {
+                    }}/>
+                </div>
+                {isExpanded &&
+                    <div className={"flex flex-row gap-2 "}>
+                        <LabelledEntry label={"Depression"} setValue={() => {
+                        }}/>
+                        <LabelledEntry label={"Anxiety"} setValue={() => {
+                        }}/>
+                        <LabelledEntry label={"Stress"} setValue={() => {
+                        }}/>
+                        <LabelledEntry label={"Mania"} setValue={() => {
+                        }}/>
+                    </div>
+                }
+                <Button
+                    onClick={() => setIsExpanded(!isExpanded)}>{isExpanded ? "Hide Details" : "Show Details"}</Button>
             </div>
             {isExpanded &&
                 <div className={"flex flex-col"}>
