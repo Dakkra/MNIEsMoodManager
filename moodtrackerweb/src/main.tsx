@@ -6,19 +6,24 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import LandingPage from "./LandingPage.tsx";
 import EntriesPage from "./EntriesPage.tsx";
 import StatsPage from "./StatsPage.tsx";
+import SettingsPage from "./SettingsPage.tsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <LandingPage></LandingPage>,
+        element: <LandingPage/>,
     },
     {
         path: "/entries",
-        element: <EntriesPage></EntriesPage>
+        element: <EntriesPage/>
     },
     {
         path: "/stats",
-        element: <StatsPage></StatsPage>
+        element: <StatsPage/>
+    },
+    {
+        path: "/settings",
+        element: <SettingsPage/>
     }
 ]);
 

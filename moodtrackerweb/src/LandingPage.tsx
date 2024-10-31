@@ -10,6 +10,7 @@ function LandingPage() {
                 <div className={"flex flex-row justify-center gap-4"}>
                     <Link to="/entries"><Button>Entries</Button></Link>
                     <Link to="/stats"><Button>Stats</Button></Link>
+                    <Link to="/settings"><Button>Settings</Button></Link>
                 </div>
             </div>
         </>

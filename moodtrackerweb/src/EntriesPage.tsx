@@ -1,7 +1,7 @@
-import {Link} from "react-router-dom";
 import Button from "./Button.tsx";
 import {useState} from "react";
 import EntryRow from "./EntryRow.tsx";
+import PageHeader from "./PageHeader.tsx";
 
 interface Entry {
     id: string;
@@ -21,10 +21,7 @@ function EntriesPage() {
 
     return (
         <>
-            <div className={"flex relative justify-center items-center"}>
-                <Link className={"absolute left-[-6rem]"} to="/"><Button>Home</Button></Link>
-                <h1 className={"inline"}>Entries</h1>
-            </div>
+            <PageHeader title={"Entries"}/>
 
             <div className={"flex flex-col justify-center gap-4 my-8"}>
                 <Button
